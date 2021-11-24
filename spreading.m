@@ -27,7 +27,7 @@ if rand<=f && forest(row,column)==1
   [Rows2,Cols2] = find(forest==2);
    scatter(Rows1,Cols1,'g','.');
    hold on
-   scatter(Rows2,Cols2,'r','.');
+   scatter(Rows2,Cols2,'k','.');
    pause(0.3)
    forest(Rows2,Cols2)=0;
    hold off
