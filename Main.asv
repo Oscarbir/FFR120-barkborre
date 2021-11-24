@@ -1,19 +1,18 @@
 clc, clear all, close all;
-
 N=16;
-p=0.7;
-densityOfFores
+p=0.01;
+densityOfForest=0.7;
 f=0.2;
-[B, T] = xlsread('temperaturdata.xlsx');
+TempList=load('TempList')
+%TempList = TempList(1447:2670) % 1696 period
 
-forest=initForest(N,p);
+forest=initForest(N,densityOfForest);
 %%
 nrOfTrees=[];
 
-while length(nrOfTrees)<500 
+while length(nrOfTrees)<100 
     tree=0;
     forest=growth(forest,p,N);
-    forest=spreading(forest,f,N,tree,nrOfTrees); 
-
-end
+    [forest, nrOfTrees]=spreading(forest,f,N,tree,nrOfTrees); 
     
+end
