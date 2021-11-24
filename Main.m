@@ -4,12 +4,11 @@ N=16;
 p=0.01;
 f=0.2;
 
-nrOfTrees=[];
-    
-    forest=zeros(N,N);
-%     for iter=1:10000
-     while length(nrOfTrees)<5000 
+forest=zeros(N,N);
 
+nrOfTrees=[];
+
+while length(nrOfTrees)<500 
          tree=0;
 %         b=rand(N,N)<= p;
 %         B = double(b);
@@ -67,5 +66,5 @@ nrOfTrees=[];
     
        end
 
-    end
+end
     
