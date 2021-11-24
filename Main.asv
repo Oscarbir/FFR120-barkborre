@@ -3,10 +3,9 @@ clc, clear all, close all;
 N=16;
 p=0.01;
 f=0.2;
-[T, B] = xlsread('temperaturdata.xlsx');
+
 forest=zeros(N,N);
 
-%%
 nrOfTrees=[];
 
 while length(nrOfTrees)<500 
