@@ -7,6 +7,10 @@ TempList=matfile('templist.mat');
 TempList = TempList.TempList;
 %TempList = TempList(1447:2670) % 1696 period
 forest=initForest(N,densityOfForest);
+meanTemp=[];
+for i=1:8:60504
+   meanTemp=[meanTemp sum(TempList(i:i+7))/8] ;
+end
 %%
 nrOfTrees=[];
 
