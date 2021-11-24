@@ -1,11 +1,11 @@
 clc, clear all, close all;
 
 N=16;
-p=0.01;
+p=0.7;
 f=0.2;
-[T, B] = xlsread('temperaturdata.xlsx');
-forest=zeros(N,N);
+[B, T] = xlsread('temperaturdata.xlsx');
 
+forest=initForest(N,p);
 %%
 nrOfTrees=[];
 
