@@ -1,5 +1,5 @@
 clc, clear all, close all;
-N=16;
+N=25;
 p=0.01;
 densityOfForest=0.7;
 f=0.2;
@@ -14,9 +14,10 @@ end
 %%
 nrOfTrees=[];
 
-while length(nrOfTrees)<100 
+for i=1:length(meanTemp) 
     tree=0;
-    forest=growth(forest,p,N);
-    [forest, nrOfTrees]=spreading(forest,f,N,tree,nrOfTrees); 
-    
+    temp=meanTemp(i);
+    [forest, nrOfTrees]=spreading(forest,N,tree,nrOfTrees,temp); 
+    forest=growth(forest,p,N,temp);
 end
+

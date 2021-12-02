@@ -1,8 +1,8 @@
-function  [forest, nrOfTrees] = spreading(forest,f,N,tree,nrOfTrees)
+function  [forest, nrOfTrees] = spreading(forest,N,tree,nrOfTrees,meanTemp)
 
  row=randi(N);
  column=randi(N);
-if rand<=f && forest(row,column)==1
+if meanTemp>=13 && forest(row,column)==1
        forest(row,column)=3;
        while find(forest==3)               
            [row,col]=find(forest==3);
