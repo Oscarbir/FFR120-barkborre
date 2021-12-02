@@ -16,8 +16,8 @@ if meanTemp>=13 && forest(row,column)==1
            if forest(row(1),min(col(1)+1,N))==1
                forest(row(1),min(col(1)+1,N))=3;
            end
-           if forest(row(1),max(col(1)-1,N))==1
-               forest(row(1),max(col(1)+1,N))=3;
+           if forest(row(1),max(col(1)-1,1))==1
+               forest(row(1),max(col(1)-1,1))=3;
            end
            forest(row(1),col(1))=2;
            tree=tree+1;

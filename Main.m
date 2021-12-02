@@ -18,6 +18,6 @@ for i=1:length(meanTemp)
     tree=0;
     temp=meanTemp(i);
     [forest, nrOfTrees]=spreading(forest,N,tree,nrOfTrees,temp); 
-    forest=growth(forest,p,N,temp);
+    forest=growth(forest,N,temp);
 end
 
