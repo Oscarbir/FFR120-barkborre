@@ -12,6 +12,7 @@ for i=1:8:60504
    meanTemp=[meanTemp sum(TempList(i:i+7))/8] ;
 end
 %%
+close all
 nrOfTrees=[];
 
 for i=1:length(meanTemp) 
