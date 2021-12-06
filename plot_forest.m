@@ -9,7 +9,7 @@ function plot_forest(forest,meanTemp,t)
     scatter(t,meanTemp(t),5,'ko','filled')
     xlabel('Days')
     ylabel('Daytime average temperature')
-    title('Forest map, green=alive, black=infected')
+    title('Temperature as a function of time')
     
     
     subplot(11,1,1:7);
@@ -22,7 +22,7 @@ function plot_forest(forest,meanTemp,t)
     axis square
     set(gca,'xtick',[],'ytick',[])
     set(gca,'XColor','none','YColor','none','TickDir','out')
-    title('Temperature as a function of time')
+    title('Forest map, green=alive, black=infected')
     pause(0.3)
     
 end
