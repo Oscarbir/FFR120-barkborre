@@ -1,5 +1,5 @@
 clc, clear all, close all;
-N=25;
+N=50;
 p=0.01;
 densityOfForest=0.7;
 f=0.2;

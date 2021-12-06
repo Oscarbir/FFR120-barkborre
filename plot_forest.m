@@ -13,10 +13,11 @@ function plot_forest(forest,meanTemp,t)
     
     
     subplot(11,1,1:7);
-    hold on
+    hold off
     [Rows1,Cols1] = find(forest==1);
     [Rows2,Cols2] = find(forest==2);
     scatter(Rows1,Cols1,'g','.');
+    hold on
     scatter(Rows2,Cols2,'k','.');
     axis([0 26 0 26])
     axis square

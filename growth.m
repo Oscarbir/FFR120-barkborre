@@ -4,36 +4,36 @@ if meanTemp>5 && meanTemp<18 %För att plantera träd får det inte vara för ka
  [x,y]=find(forest==0);
  if not(isempty(x)) && length(find(forest~=0))< 0.7*N*N
  randx=randi(length(x));
- randy=randi(length(y));
- forest(x(randx),y(randy))=1;
 
-           if forest(min(x(randx)+1,N),y(randy))==0
-               forest(min(x(randx)+1,N),y(randy))=1;
+ forest(x(randx),y(randx))=1;
+
+           if forest(min(x(randx)+1,N),y(randx))==0
+               forest(min(x(randx)+1,N),y(randx))=1;
            end
-           if forest(max(x(randx)-1,1),y(randy))==0
-               forest(max(x(randx)-1,1),y(randy))=1;
+           if forest(max(x(randx)-1,1),y(randx))==0
+               forest(max(x(randx)-1,1),y(randx))=1;
            end
-           if forest(x(randx),min(y(randy)+1,N))==0
-               forest(x(randx),min(y(randy)+1,N))=1;
+           if forest(x(randx),min(y(randx)+1,N))==0
+               forest(x(randx),min(y(randx)+1,N))=1;
            end
-           if forest(x(randx),max(y(randy)-1,1))==0
-               forest(x(randx),max(y(randy)-1,1))=1;
-           end
-           
-           if forest(max(x(randx)-1,1),max(y(randy)-1,1))==0
-               forest(max(x(randx)-1,1),max(y(randy)-1,1))=1; % Vänsterupp
+           if forest(x(randx),max(y(randx)-1,1))==0
+               forest(x(randx),max(y(randx)-1,1))=1;
            end
            
-           if forest(min(x(randx)+1,N),max(y(randy)-1,1))==0 
-               forest(min(x(randx)+1,N),max(y(randy)-1,1))=1;   %VänsterNer
+           if forest(max(x(randx)-1,1),max(y(randx)-1,1))==0
+               forest(max(x(randx)-1,1),max(y(randx)-1,1))=1; % Vänsterupp
            end
            
-           if forest(max(x(randx)-1,1),min(y(randy)+1,N))==0 
-               forest(max(x(randx)-1,1),min(y(randy)+1,N))=1;   %Högerupp
+           if forest(min(x(randx)+1,N),max(y(randx)-1,1))==0 
+               forest(min(x(randx)+1,N),max(y(randx)-1,1))=1;   %VänsterNer
            end
            
-           if forest(min(x(randx)+1,N),min(y(randy)+1,N))==0
-               forest(min(x(randx)+1,N),min(y(randy)+1,N))= 1;   %Högerner
+           if forest(max(x(randx)-1,1),min(y(randx)+1,N))==0 
+               forest(max(x(randx)-1,1),min(y(randx)+1,N))=1;   %Högerupp
+           end
+           
+           if forest(min(x(randx)+1,N),min(y(randx)+1,N))==0
+               forest(min(x(randx)+1,N),min(y(randx)+1,N))= 1;   %Högerner
            end
            
  end
