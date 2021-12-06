@@ -20,12 +20,11 @@ invFreq = 10;
 for i=1:length(meanTemp)
     tree=0;
     temp=meanTemp(i);
-    [forest, nrOfTrees]=spreading(forest,N,tree,nrOfTrees,temp); 
+    [forest, nrOfTrees]=spreading(forest,N,tree,nrOfTrees,temp);    
+    if mod(i,10)==0
+      plot_forest(forest,meanTemp,i)
+    end
     forest = forestWalk(forest,invFreq,i);
     forest=growth(forest,N,temp);
-    forest = forestWalk(forest,invFreq,i);
-    if mod(i,10)==0
-      plot_forest(forest,meanTemp,t)
-    end
 end
 
