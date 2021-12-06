@@ -44,10 +44,6 @@ if meanTemp>=13 && forest(row,column)==1
        end
   [Rows1,Cols1] = find(forest==1);
   [Rows2,Cols2] = find(forest==2);
-   scatter(Rows1,Cols1,'g','.');
-   hold on
-   scatter(Rows2,Cols2,'k','.');
-   pause(0.3)
    forest(Rows2,Cols2)=2;
    %hold off
    %scatter(Rows1,Cols1,'g','.');
