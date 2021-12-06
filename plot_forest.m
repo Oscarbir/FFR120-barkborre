@@ -1,4 +1,4 @@
-function plot_forest(forest,t)
+function plot_forest(forest,meanTemp,t)
     clf
     subplot(11,1,1:7)
     axis square
