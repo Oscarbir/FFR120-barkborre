@@ -24,19 +24,19 @@ if meanTemp>=13 && forest(row,column)==1
            end
            
            if forest(max(row(1)-1,1),max(col(1)-1,1))==1 && rand < spreadProb
-               forest(max(row(1)-1,1),max(col(1)-1,1))=3 % Vänsterupp
+               forest(max(row(1)-1,1),max(col(1)-1,1))=3; % Vänsterupp
            end
            
            if forest(max(row(1)-1,1),max(col(1)-1,1))==1 && rand < spreadProb
-               forest(min(row(1)+1,N),max(col(1)-1,N))=3   %VänsterNer
+               forest(min(row(1)+1,N),max(col(1)-1,N))=3;   %VänsterNer
            end
            
            if forest(max(row(1)-1,1),max(col(1)-1,1))==1 && rand < spreadProb
-               forest(max(row(1)-1,1),min(col(1)-1,1))=1   %Högerupp
+               forest(max(row(1)-1,1),min(col(1)-1,N))=3;   %Högerupp
            end
            
            if forest(max(row(1)-1,1),max(col(1)-1,1))==1 && rand < spreadProb
-               forest(max(row(1)-1,1),max(col(1)-1,1))=1    %Högerner
+               forest(min(row(1)+1,N),min(row(1)+1,N))= 3;   %Högerner
            end
            
            forest(row(1),col(1))=2;
