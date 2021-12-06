@@ -12,19 +12,6 @@ meanTemp=[];
 for i=1:8:60504
    meanTemp=[meanTemp sum(TempList(i:i+7))/8] ;
 end
-
-[B, T] = xlsread('temperaturdata.xlsx');
-T = [T(:,1) cellfun(@str2num, T(:,2:end))]
-TempList = zeros(60504,1);
-for i=1:60504
-    y = T(i);
-    x = cell2mat(y);
-    TempList(i) = str2double(x);
-end
-TempList = TempList(1447:2670) % 1696 period
-%forest=initForest(N,densityOfForest);
-%>>>>>>> Stashed changes
-%test
 %%
 close all
 nrOfTrees=[];
