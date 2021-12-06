@@ -22,6 +22,6 @@ for i=1:length(meanTemp)
     temp=meanTemp(i);
     [forest, nrOfTrees]=spreading(forest,N,tree,nrOfTrees,temp); 
     forest=growth(forest,N,temp);
-    forest = forestWalk;
+    forest = forestWalk(forest,invFreq,i);
 end
 
