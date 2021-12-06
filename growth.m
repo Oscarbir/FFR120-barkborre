@@ -2,7 +2,7 @@ function newForest = growth(forest,N,meanTemp)
 
 if meanTemp>5 && meanTemp<18 %För att plantera träd får det inte vara för kallt men man vill att marken ska vara fuktig så inte högsommar.
  [x,y]=find(forest==0);
- if not(isempty(x))
+ if not(isempty(x)) && length(find(~forest))< 0.7*N*N
  randx=randi(length(x));
  randy=randi(length(y));
  forest(x(randx),y(randy))=1;

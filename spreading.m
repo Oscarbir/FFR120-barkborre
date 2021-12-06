@@ -3,21 +3,23 @@ function  [forest, nrOfTrees] = spreading(forest,N,tree,nrOfTrees,meanTemp)
  row=randi(N);
  column=randi(N);
 if meanTemp>=13 && forest(row,column)==1
-    if rand < 0.2           %Ändra till korrekt sannolikhet senare
+    spreadProb=-0.26+meanTemp*0.02; 
+    if rand < spreadProb           %Ändra till korrekt sannolikhet senare
        forest(row,column)=3;
     end
        while find(forest==3)               
            [row,col]=find(forest==3);
-           if forest(min(row(1)+1,N),col(1))==1 && rand < 0.2 %Fixa rätt sannolikhet  
+
+           if forest(min(row(1)+1,N),col(1))==1 && rand < spreadProb %Fixa rätt sannolikhet  
                forest(min(row(1)+1,N),col(1))=3;
            end
-           if forest(max(row(1)-1,1),col(1))==1 && rand < 0.2
+           if forest(max(row(1)-1,1),col(1))==1 && rand < spreadProb
                forest(max(row(1)-1,1),col(1))=3;
            end
-           if forest(row(1),min(col(1)+1,N))==1 && rand < 0.2
+           if forest(row(1),min(col(1)+1,N))==1 && rand < spreadProb
                forest(row(1),min(col(1)+1,N))=3;
            end
-           if forest(row(1),max(col(1)-1,1))==1 && rand < 0.2
+           if forest(row(1),max(col(1)-1,1))==1 && rand < spreadProb
                forest(row(1),max(col(1)-1,1))=3;
            end
            forest(row(1),col(1))=2;
