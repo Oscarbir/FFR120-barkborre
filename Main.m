@@ -28,8 +28,16 @@ TempList = TempList(1447:2670) % 1696 period
 %%
 close all
 nrOfTrees=[];
-
-for i=1:length(meanTemp) 
+invFreq = 10;
+for i=1:length(meanTemp)
+    if mod(i,invFreq)==0
+        if rand < length(find(forest==2)*0.05)
+            [rows,cols]= find(forest==2)
+            forest(rows,cols) = 0
+            
+        end
+    end
+        
     tree=0;
     temp=meanTemp(i);
     [forest, nrOfTrees]=spreading(forest,N,tree,nrOfTrees,temp); 
