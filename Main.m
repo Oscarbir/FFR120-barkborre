@@ -10,7 +10,7 @@ TempList = TempList.TempList;
 forest=initForest(N,densityOfForest);
 meanTemp=[];
 for i=1:8:60504
-   meanTemp=[meanTemp sum(TempList(i:i+7))/8] ;
+   meanTemp=[meanTemp sum(TempList(i+4:i+7))/4] ;
 end
 %%
 close all
