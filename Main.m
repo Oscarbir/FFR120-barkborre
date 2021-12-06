@@ -3,6 +3,7 @@ N=25;
 p=0.01;
 densityOfForest=0.7;
 f=0.2;
+rng(1);
 %<<<<<<< Updated upstream
 TempList=matfile('templist.mat');
 TempList = TempList.TempList;

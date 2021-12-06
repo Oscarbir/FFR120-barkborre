@@ -9,39 +9,40 @@ if meanTemp>=13 && forest(row,column)==1
     end
       if length(find(forest==3))>0        
            [row,col]=find(forest==3);
-
-           if forest(min(row(1)+1,N),col(1))==1 && rand < spreadProb %Fixa rätt sannolikhet  
-               forest(min(row(1)+1,N),col(1))=3;
+         for n=1:length(row)
+           if forest(min(row(n)+1,N),col(n))==1 && rand < spreadProb %Fixa rätt sannolikhet  
+               forest(min(row(1)+1,N),col(n))=3;
            end
-           if forest(max(row(1)-1,1),col(1))==1 && rand < spreadProb
-               forest(max(row(1)-1,1),col(1))=3;
+           if forest(max(row(n)-1,1),col(n))==1 && rand < spreadProb
+               forest(max(row(n)-1,1),col(n))=3;
            end
-           if forest(row(1),min(col(1)+1,N))==1 && rand < spreadProb
-               forest(row(1),min(col(1)+1,N))=3;
+           if forest(row(n),min(col(n)+1,N))==1 && rand < spreadProb
+               forest(row(n),min(col(n)+1,N))=3;
            end
-           if forest(row(1),max(col(1)-1,1))==1 && rand < spreadProb
-               forest(row(1),max(col(1)-1,1))=3;
-           end
-           
-           if forest(max(row(1)-1,1),max(col(1)-1,1))==1 && rand < spreadProb
-               forest(max(row(1)-1,1),max(col(1)-1,1))=3; % Vänsterupp
+           if forest(row(n),max(col(n)-1,1))==1 && rand < spreadProb
+               forest(row(n),max(col(n)-1,1))=3;
            end
            
-           if forest(min(row(1)+1,N),max(col(1)-1,1))==1 && rand < spreadProb
-               forest(min(row(1)+1,N),max(col(1)-1,1))=3;   %VänsterNer
+           if forest(max(row(n)-1,1),max(col(n)-1,1))==1 && rand < spreadProb
+               forest(max(row(n)-1,1),max(col(n)-1,1))=3; % Vänsterupp
            end
            
-           if forest(max(row(1)-1,1),min(col(1)+1,N))==1 && rand < spreadProb
-               forest(max(row(1)-1,1),min(col(1)+1,N))=3;   %Högerupp
+           if forest(min(row(n)+1,N),max(col(n)-1,1))==1 && rand < spreadProb
+               forest(min(row(n)+1,N),max(col(n)-1,1))=3;   %VänsterNer
            end
            
-           if forest(min(row(1)+1,N),min(col(1)+1,N))==1 && rand < spreadProb
-               forest(min(row(1)+1,N),min(row(1)+1,N))= 3;   %Högerner
+           if forest(max(row(n)-1,1),min(col(n)+1,N))==1 && rand < spreadProb
+               forest(max(row(n)-1,1),min(col(n)+1,N))=3;   %Högerupp
            end
            
-           forest(row(1),col(1))=2;
+           if forest(min(row(n)+1,N),min(col(n)+1,N))==1 && rand < spreadProb
+               forest(min(row(n)+1,N),min(row(n)+1,N))= 3;   %Högerner
+           end
+           
+           forest(row(n),col(n))=2;
            tree=tree+1;
 
       nrOfTrees=[nrOfTrees tree];
+         end
       end
 end
