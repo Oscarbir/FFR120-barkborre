@@ -8,7 +8,6 @@ if meanTemp>=13 && forest(row,column)==1
     end
        while find(forest==3)               
            [row,col]=find(forest==3);
-
            if forest(min(row(1)+1,N),col(1))==1 && rand < 0.2 %Fixa rätt sannolikhet  
                forest(min(row(1)+1,N),col(1))=3;
            end

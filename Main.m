@@ -16,6 +16,7 @@ end
 close all
 nrOfTrees=[];
 invFreq = 10;
+
 for i=1:length(meanTemp)
     tree=0;
     temp=meanTemp(i);
