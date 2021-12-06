@@ -39,9 +39,10 @@ if meanTemp>=13 && forest(row,column)==1
                forest(min(row(1)+1,N),min(row(1)+1,N))= 2;   %Högerner
            end
            
-           forest(row(1),col(1))=2;
+           forest(row(n),col(n))=2;
            tree=tree+1;
 
       nrOfTrees=[nrOfTrees tree];
+         end
       end
 end
