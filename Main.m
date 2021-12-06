@@ -23,7 +23,7 @@ for i=1:length(meanTemp)
     forest=growth(forest,N,temp);
     if mod(i,invFreq)==0
         if rand < length(find(forest==2)*0.05)
-            [rows,cols]= find(forest==2)
+            [rows,cols]= find(forest==2);
             forest(rows,cols) = 0;
             [rows1,cols1] = find(forest==1);
             hold off
