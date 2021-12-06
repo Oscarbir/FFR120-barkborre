@@ -21,7 +21,7 @@ if meanTemp>5 && meanTemp<18 %För att plantera träd får det inte vara för ka
            end
            
            if forest(max(x(randx)-1,1),max(y(randy)-1,1))==0
-               forest(max(x(randx)-1,11),max(y(randy)-1,1))=1; % Vänsterupp
+               forest(max(x(randx)-1,1),max(y(randy)-1,1))=1; % Vänsterupp
            end
            
            if forest(min(x(randx)+1,N),max(y(randy)-1,1))==0 
