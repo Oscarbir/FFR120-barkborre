@@ -4,7 +4,5 @@ if mod(i,invFreq)==0
             [rows,cols]= find(forest==2);
             forest(rows,cols) = 0;
             [rows1,cols1] = find(forest==1);
-            hold off
-            scatter(rows1,cols1,'g','.');
         end
 end
