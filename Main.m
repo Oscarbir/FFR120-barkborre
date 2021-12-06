@@ -29,8 +29,6 @@ for i=1:length(meanTemp)
             [rows1,cols1] = find(forest==1);
             hold off
             scatter(rows1,cols1,'g','.');
-
-            
         end
     end
 end
