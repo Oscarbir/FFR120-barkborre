@@ -1,12 +1,10 @@
-function forest = forestWalk(forest,invFreq,i,N)
+function forest = forestWalk(forest,invFreq,i)
 if mod(i,invFreq)==0
     r = rand;
         if r < length(find(forest==2))*0.01
             [rows,cols]= find(forest==2);
             %forest(rows,cols) = 0;
-            found = true;
-        else
-            found = false;
+            found = true
         end
    if found
    r=randi(length(rows));
@@ -27,20 +25,20 @@ if mod(i,invFreq)==0
                forest(row(1),max(col(1)+1,N))=4;
            end
            
-           if forest(max(row(1)-1,1),max(col(1)-1,1))==2
-               forest(max(row(1)-1,1),max(col(1)-1,1))=4; % Vänsterupp 
+           if forest(max(row(n)-1,1),max(col(n)-1,1))==1
+               forest(max(row(n)-1,1),max(col(n)-1,1))=2; % Vänsterupp 
            end 
             
-           if forest(min(row(1)+1,N),max(col(1)-1,1))==2
-               forest(min(row(1)+1,N),max(col(1)-1,1))=4;   %VänsterNer 
+           if forest(min(row(n)+1,N),max(col(n)-1,1))==1
+               forest(min(row(n)+1,N),max(col(n)-1,1))=2;   %VänsterNer 
            end 
             
-           if forest(max(row(1)-1,1),min(col(1)+1,N))==2
-               forest(max(row(1)-1,1),min(col(1)+1,N))=4;   %Högerupp 
+           if forest(max(row(n)-1,1),min(col(n)+1,N))==1
+               forest(max(row(n)-1,1),min(col(n)+1,N))=2;   %Högerupp 
            end 
             
-           if forest(min(row(1)+1,N),min(col(1)+1,N))==2
-               forest(min(row(1)+1,N),min(row(1)+1,N))=4;   %Högerner 
+           if forest(min(row(n)+1,N),min(col(n)+1,N))==1
+               forest(min(row(n)+1,N),min(row(n)+1,N))=2;   %Högerner 
            end 
            forest(row(1),col(1))=0;
 

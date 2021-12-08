@@ -30,7 +30,7 @@ for n=0:0.01:1
 %         if mod(i,10)==1
 %           plot_forest(forest,meanTemp(1:i),i,N)
 %         end
-        forest = forestWalk(forest,invFreq,i);
+        forest = forestWalk(forest,invFreq,i,N);
         forest=growth(forest,N,temp,densityOfForest);
         if mod(i,365)==1
           infected=[infected sum(nrOfTrees)];
