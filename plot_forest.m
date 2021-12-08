@@ -24,6 +24,6 @@ function plot_forest(forest,meanTemp,t)
     set(gca,'xtick',[],'ytick',[])
     set(gca,'XColor','none','YColor','none','TickDir','out')
     title('Forest map, green=alive, black=infected')
-    pause(0.3)
+    pause(0.1)
     
 end
