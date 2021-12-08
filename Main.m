@@ -6,9 +6,7 @@ suminfect=[];
 
 for n=0:0.01:1
     N=50;
-    p=0.01;
     densityOfForest=0.8;
-    f=0.2;
     rng(1);
 
     TempList=matfile('templist.mat');
