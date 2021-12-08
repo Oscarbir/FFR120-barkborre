@@ -35,6 +35,12 @@ for n=0:0.01:1
         if mod(i,365)==1
           infected=[infected sum(nrOfTrees)];
           nrOfTrees=[];
+          [row,col]=find(forest==2);
+          for step=1:length(row)
+              if ran<=0.4
+                 forest8) 
+              end
+          end
         end
     end
     suminfect=[suminfect sum(infected)];

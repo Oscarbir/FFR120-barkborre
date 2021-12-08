@@ -35,6 +35,7 @@ for n=0:0.01:1
         if mod(i,365)==1
           infected=[infected sum(nrOfTrees)];
           nrOfTrees=[];
+          forest=winterdead(forest);
         end
     end
     suminfect=[suminfect sum(infected)];
