@@ -1,5 +1,9 @@
 clc, clear all, close all;
+for look=1:5
 suminfect=[];
+%Kanske borde göra ytterliggare någon loop för att ändra hur ofta
+%skogsbrukaren letar inektion samt planterar.
+
 for n=0:0.01:1
     N=50;
     p=0.01;
@@ -16,7 +20,7 @@ for n=0:0.01:1
     end
 
     nrOfTrees=[];
-    invFreq = 10;
+    invFreq = look*2;
 
     tempdiff=normrnd(n,0.5,[1,length(meanTemp)]);
     b=meanTemp+tempdiff;
@@ -37,12 +41,14 @@ for n=0:0.01:1
     end
     suminfect=[suminfect sum(infected)];
 end
-figure(2)
-x1 = 1:101;
+figure(look)
+x1 = 0:0.01:1;
 plot(x1,suminfect)
-axis([0 101 0 20000])
+axis([0 1 0 20000])
 hold on 
 p = polyfit(x1,suminfect,1);
 y1 = polyval(p,x1);
 plot(x1,y1);
-increase=p(1)/(N*N);
+ylabel('Infected trees over 20 years')
+xlabel('Mean increase of temperature')
+end
