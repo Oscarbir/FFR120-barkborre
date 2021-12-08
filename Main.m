@@ -27,9 +27,9 @@ for n=0:0.01:1
         tree=0;
         temp=b(i);
         [forest, nrOfTrees]=spreading(forest,N,tree,nrOfTrees,temp);    
-%         if mod(i,10)==1
-%           plot_forest(forest,meanTemp(1:i),i,N)
-%         end
+        if mod(i,10)==1
+          plot_forest(forest,meanTemp(1:i),i,N)
+        end
         forest = forestWalk(forest,invFreq,i,N);
         forest=growth(forest,N,temp,densityOfForest);
         if mod(i,365)==1
