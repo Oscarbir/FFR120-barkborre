@@ -3,9 +3,9 @@ for look=1:5
 suminfect=[];
 %Kanske borde göra ytterliggare någon loop för att ändra hur ofta
 %skogsbrukaren letar inektion samt planterar.
-
+disp(look)
 for n=0:0.01:1
-    N=50;
+    N=25;
     densityOfForest=0.8;
     rng(1);
 
@@ -30,17 +30,12 @@ for n=0:0.01:1
 %         if mod(i,10)==1
 %           plot_forest(forest,meanTemp(1:i),i,N)
 %         end
-        forest = forestWalk(forest,invFreq,i);
+        forest = forestWalk(forest,invFreq,i,N);
         forest=growth(forest,N,temp,densityOfForest);
         if mod(i,365)==1
           infected=[infected sum(nrOfTrees)];
           nrOfTrees=[];
-          [row,col]=find(forest==2);
-          for step=1:length(row)
-              if ran<=0.4
-                 forest8) 
-              end
-          end
+          forest=winterdead(forest);
         end
     end
     suminfect=[suminfect sum(infected)];
