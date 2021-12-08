@@ -1,22 +1,39 @@
 clc, clear all, close all;
-N=16;
+N=50;
 p=0.01;
-densityOfForest=0.7;
+densityOfForest=0.8;
 f=0.2;
+rng(1);
+infected=[];
 TempList=matfile('templist.mat');
 TempList = TempList.TempList;
 %TempList = TempList(1447:2670) % 1696 period
 forest=initForest(N,densityOfForest);
 meanTemp=[];
 for i=1:8:60504
-   meanTemp=[meanTemp sum(TempList(i:i+7))/8] ;
+   meanTemp=[meanTemp sum(TempList(i+4:i+7))/4] ;
 end
-%%
+tempdiff=rand(1,length(meanTemp))-0.25;
+%meanTemp=meanTemp+tempdiff;
+%%  
+close all
 nrOfTrees=[];
-
-for i=1:length(meanTemp) 
-    tree=0;
-    [forest, nrOfTrees]=spreading(forest,f,N,tree,nrOfTrees,te); 
-    forest=growth(forest,p,N,meanTemp(i));
+invFreq = 10;
+for n=0:0.1:1
+    tempdiff=n*rand(1,length(meanTemp));
+    meanTemp=meanTemp+tempdiff;
+    for i=1:length(meanTemp)
+        tree=0;
+        temp=meanTemp(i);
+        [forest, nrOfTrees]=spreading(forest,N,tree,nrOfTrees,temp);    
+    %     if mod(i,10)==1
+    %       plot_forest(forest,meanTemp(1:i),i)
+    %     end
+        forest = forestWalk(forest,invFreq,i);
+        forest=growth(forest,N,temp,densityOfForest);
+        if mod(i,365)==1
+          infected=[infected sum(nrOfTrees)];
+          nrOfTrees=[];
+        end
+    end
 end
-
