@@ -1,6 +1,6 @@
 function newForest = growth(forest,N,meanTemp,dense)
 
-if meanTemp>5 && meanTemp<20 %För att plantera träd får det inte vara för kallt men man vill att marken ska vara fuktig så inte högsommar.
+if meanTemp>4 && meanTemp<20 %För att plantera träd får det inte vara för kallt men man vill att marken ska vara fuktig så inte högsommar.
  [x,y]=find(forest==0);
  if not(isempty(x)) && length(find(forest~=0))< dense*N*N
  randx=randi(length(x));

@@ -1,4 +1,4 @@
-function plot_forest(forest,meanTemp,t)
+function plot_forest(forest,meanTemp,t,N)
     hold on
     pl=subplot(11,1,9:11);
     pl.Position = [0.395 0.1 0.25 0.2];
@@ -19,7 +19,7 @@ function plot_forest(forest,meanTemp,t)
     scatter(Rows1,Cols1,'g','.');
     hold on
     scatter(Rows2,Cols2,'k','.');
-    axis([0 26 0 26])
+    axis([0 N 0 N])
     axis square
     set(gca,'xtick',[],'ytick',[])
     set(gca,'XColor','none','YColor','none','TickDir','out')

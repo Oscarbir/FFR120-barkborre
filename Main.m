@@ -1,6 +1,6 @@
 clc, clear all, close all;
 suminfect=[];
-for n=0:0.05:2
+for n=0:0.01:1
     N=50;
     p=0.01;
     densityOfForest=0.8;
@@ -18,7 +18,7 @@ for n=0:0.05:2
     nrOfTrees=[];
     invFreq = 10;
 
-    tempdiff=n*rand(1,length(meanTemp))-n/4;
+    tempdiff=normrnd(n,0.5,[1,length(meanTemp)]);
     b=meanTemp+tempdiff;
     infected=[];
     for i=1:length(meanTemp)
@@ -26,7 +26,7 @@ for n=0:0.05:2
         temp=b(i);
         [forest, nrOfTrees]=spreading(forest,N,tree,nrOfTrees,temp);    
 %         if mod(i,10)==1
-%           plot_forest(forest,meanTemp(1:i),i)
+%           plot_forest(forest,meanTemp(1:i),i,N)
 %         end
         forest = forestWalk(forest,invFreq,i);
         forest=growth(forest,N,temp,densityOfForest);
@@ -38,5 +38,11 @@ for n=0:0.05:2
     suminfect=[suminfect sum(infected)];
 end
 figure(2)
-plot(1:41,suminfect)
-axis([0 41 0 18000])
+x1 = 1:101;
+plot(x1,suminfect)
+axis([0 101 0 20000])
+hold on 
+p = polyfit(x1,suminfect,1);
+y1 = polyval(p,x1);
+plot(x1,y1);
+increase=p(1)/(N*N);
