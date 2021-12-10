@@ -1,6 +1,6 @@
 clc, clear all, close all;
 matrix=zeros([15, 101]);
-for look=1:30
+for look=1:5
 suminfect=[];
 %Kanske borde göra ytterliggare någon loop för att ändra hur ofta
 %skogsbrukaren letar inektion samt planterar.
@@ -64,6 +64,8 @@ end
 
 imagesc(matrix)
 xticks([1, 11, 21, 31, 41, 51, 61, 71, 81, 91, 101])
-xticklabels({'0.0','0.1','0.2','0.3','0.4','0.5','0.6', '0.7', '0.8', '0.9', '1.0'})
+yticks([5, 10, 15, 20, 25, 30])
+xticklabels({'0.0','0.1','0.2','0.3' ,'0.4','0.5','0.6', '0.7', '0.8', '0.9', '1.0'})
+yticklabels({'10', '20', '30', '40', '50', '60'})
 ylabel('Frequency of devastation')
 xlabel('Mean increase in temperature')
