@@ -2,8 +2,8 @@ function  [forest, nrOfTrees] = spreading(forest,N,tree,nrOfTrees,meanTemp)
  
  row=randi(N); 
  column=randi(N); 
-if meanTemp>=15 && forest(row,column)==1 
-    spreadProb=meanTemp*0.02;  
+if meanTemp>=13 && forest(row,column)==1 
+    spreadProb=meanTemp*0.02 -0.2;  
     if rand < spreadProb           %Ändra till korrekt sannolikhet senare 
        forest(row,column)=2; 
     end 
